@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="container-x py-16">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
-            <BrandMark variant="dark" label="GRMS" />
+            <BrandMark variant="dark" label="HRMS" />
             <p className="mt-4 text-sm text-white/70 max-w-sm">
               The all-in-one HRMS and bulk email platform for modern Indian businesses.
             </p>
@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="text-sm text-white/60">
-            (c) {new Date().getFullYear()} GRMS. All rights reserved.
+            (c) {new Date().getFullYear()} HRMS. All rights reserved.
           </div>
           <div className="flex items-center gap-3">
             {[Twitter, Linkedin, Facebook, Instagram, Youtube].map((Icon, i) => (
