@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Force the deploy adapter on non-Lovable hosts so Vercel gets a proper build output
+  // instead of falling back to the default placeholder page.
+  nitro: { preset: "vercel" },
 });
