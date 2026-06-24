@@ -25,14 +25,14 @@ export default function TopNavbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-border">
-      <div className="container-x flex h-16 items-center justify-between gap-4">
+      <div className="container-x flex h-16 items-center gap-4">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 shrink-0">
-          <BrandMark label="HRMS" />
+          <BrandMark label="logo 1" />
         </a>
 
         {/* Product tabs */}
-        <nav className="hidden lg:flex items-center gap-1 mx-auto">
+        <nav className="hidden lg:flex items-center gap-1">
           <ProductTab
             label="HRMS"
             icon={<Users className="h-4 w-4" />}
@@ -56,10 +56,16 @@ export default function TopNavbar() {
         </nav>
 
         {/* Right CTA */}
-        <div className="hidden lg:flex items-center gap-2 shrink-0">
-          <a href="#contact" className="btn-ghost">Contact Sales</a>
-          <a href="#login" className="btn-ghost">Login</a>
-          <a href="#trial" className="btn-success">Start Free Trial</a>
+        <div className="ml-auto hidden lg:flex items-center gap-2 shrink-0">
+          <a href="#contact" className="btn-ghost">
+            Contact Sales
+          </a>
+          <a href="#login" className="btn-ghost">
+            Login
+          </a>
+          <a href="#trial" className="btn-success">
+            Start Free Trial
+          </a>
         </div>
 
         <button
@@ -78,8 +84,12 @@ export default function TopNavbar() {
             <MobileGroup title="HRMS" items={hrmsLinks} />
             <MobileGroup title="Bulk Email" items={emailLinks} />
             <div className="grid grid-cols-2 gap-2 pt-2">
-              <a href="#login" className="btn-outline">Login</a>
-              <a href="#trial" className="btn-success">Free Trial</a>
+              <a href="#login" className="btn-outline">
+                Login
+              </a>
+              <a href="#trial" className="btn-success">
+                Free Trial
+              </a>
             </div>
           </div>
         </div>
@@ -89,20 +99,30 @@ export default function TopNavbar() {
 }
 
 function ProductTab({
-  label, icon, active, onClick, onHover, onLeave, isOpen, items,
+  label,
+  icon,
+  active,
+  onClick,
+  onHover,
+  onLeave,
+  isOpen,
+  items,
 }: {
-  label: string; icon: React.ReactNode; active: boolean;
-  onClick: () => void; onHover: () => void; onLeave: () => void;
-  isOpen: boolean; items: { label: string; desc: string }[];
+  label: string;
+  icon: React.ReactNode;
+  active: boolean;
+  onClick: () => void;
+  onHover: () => void;
+  onLeave: () => void;
+  isOpen: boolean;
+  items: { label: string; desc: string }[];
 }) {
   return (
     <div className="relative" onMouseEnter={onHover} onMouseLeave={onLeave}>
       <button
         onClick={onClick}
         className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-          active
-            ? "bg-primary-soft text-primary"
-            : "text-ink hover:bg-surface"
+          active ? "bg-primary-soft text-primary" : "text-ink hover:bg-surface"
         }`}
       >
         {icon}
@@ -131,7 +151,13 @@ function ProductTab({
   );
 }
 
-function MobileGroup({ title, items }: { title: string; items: { label: string; desc: string }[] }) {
+function MobileGroup({
+  title,
+  items,
+}: {
+  title: string;
+  items: { label: string; desc: string }[];
+}) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border border-border rounded-lg">
@@ -145,7 +171,11 @@ function MobileGroup({ title, items }: { title: string; items: { label: string; 
       {open && (
         <div className="border-t border-border p-2 space-y-1">
           {items.map((it) => (
-            <a key={it.label} href={`#${it.label}`} className="block px-2 py-1.5 text-sm hover:bg-surface rounded">
+            <a
+              key={it.label}
+              href={`#${it.label}`}
+              className="block px-2 py-1.5 text-sm hover:bg-surface rounded"
+            >
               {it.label}
             </a>
           ))}

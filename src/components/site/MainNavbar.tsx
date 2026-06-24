@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import BrandMark from "./BrandMark";
 
 const features = {
   "Core HRMS": [
@@ -25,15 +26,26 @@ const features = {
   ],
 };
 
-const navItems = ["Features", "Pricing", "Customers", "Integrations", "Resources", "Partner With Us"];
+const navItems = [
+  "Features",
+  "Pricing",
+  "Customers",
+  "Integrations",
+  "Resources",
+  "Partner With Us",
+];
 
 export default function MainNavbar() {
   const [mega, setMega] = useState(false);
 
   return (
     <div className="sticky top-16 z-40 bg-primary-soft/70 backdrop-blur-md border-b border-border">
-      <div className="container-x flex h-12 items-center justify-between">
-        <nav className="hidden md:flex items-center gap-1">
+      <div className="container-x flex h-12 items-center gap-4">
+        <a href="/" className="hidden md:flex items-center gap-2 shrink-0">
+          <BrandMark label="logo 2" className="scale-90 origin-left" />
+        </a>
+
+        <nav className="hidden md:flex items-center gap-1 mx-auto">
           {navItems.map((item) =>
             item === "Features" ? (
               <div
@@ -80,12 +92,15 @@ export default function MainNavbar() {
               >
                 {item}
               </a>
-            )
+            ),
           )}
         </nav>
 
         <div className="flex items-center gap-2 ml-auto">
-          <a href="#demo" className="hidden sm:inline text-sm font-medium text-primary hover:underline">
+          <a
+            href="#demo"
+            className="hidden sm:inline text-sm font-medium text-primary hover:underline"
+          >
             Request Demo
           </a>
           <a
