@@ -3,14 +3,17 @@ import BrandMark from "./BrandMark";
 
 const cols = [
   { title: "Products", links: ["HRMS", "Bulk Email", "Attendance", "Payroll", "Leave Management"] },
-  { title: "Features", links: ["GPS Attendance", "Biometric", "Campaign Builder", "Templates", "Automation"] },
+  {
+    title: "Features",
+    links: ["GPS Attendance", "Biometric", "Campaign Builder", "Templates", "Automation"],
+  },
   { title: "Company", links: ["About", "Careers", "Press", "Partner With Us", "Contact"] },
   { title: "Resources", links: ["Help Center", "Blog", "API Docs", "Webinars", "Case Studies"] },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-white">
+    <footer id="contact" className="bg-ink text-white scroll-mt-24">
       <div className="container-x py-16">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
@@ -43,11 +46,16 @@ export default function Footer() {
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-6">
             {cols.map((c) => (
               <div key={c.title}>
-                <div className="text-xs font-bold uppercase tracking-wider text-white/60">{c.title}</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-white/60">
+                  {c.title}
+                </div>
                 <ul className="mt-3 space-y-2">
                   {c.links.map((l) => (
                     <li key={l}>
-                      <a href={`#${l}`} className="text-sm text-white/80 hover:text-white transition-colors">
+                      <a
+                        href={`#${l}`}
+                        className="text-sm text-white/80 hover:text-white transition-colors"
+                      >
                         {l}
                       </a>
                     </li>

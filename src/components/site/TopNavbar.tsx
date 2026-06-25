@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, Menu, X, Mail, Users } from "lucide-react";
 import BrandMark from "./BrandMark";
+import { productDropdownColumns } from "./nav-content";
 
 const hrmsLinks = [
   { label: "Attendance", desc: "GPS, biometric & shifts" },
@@ -81,6 +82,7 @@ export default function TopNavbar() {
       {mobile && (
         <div className="lg:hidden border-t border-border bg-white">
           <div className="container-x py-4 space-y-3">
+            <MobileProductGroup title="Product" columns={productDropdownColumns} />
             <MobileGroup title="HRMS" items={hrmsLinks} />
             <MobileGroup title="Bulk Email" items={emailLinks} />
             <div className="grid grid-cols-2 gap-2 pt-2">
@@ -95,6 +97,58 @@ export default function TopNavbar() {
         </div>
       )}
     </header>
+  );
+}
+
+function MobileProductGroup({
+  title,
+  columns,
+}: {
+  title: string;
+  columns: {
+    groups: { title: string; links: { label: string; href: string }[] }[];
+  }[];
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border border-border rounded-lg">
+      <button
+        onClick={() => setOpen((s) => !s)}
+        className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-semibold"
+      >
+        {title}
+        <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="border-t border-border p-3 space-y-3">
+          <div className="space-y-4">
+            {columns.map((column, columnIndex) => (
+              <div key={columnIndex} className="space-y-3">
+                {column.groups.map((group) => (
+                  <div key={group.title} className="rounded-lg border border-border p-3">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-primary">
+                      {group.title}
+                    </div>
+                    <div className="mt-2 space-y-1.5">
+                      {group.links.map((link) => (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          className="block rounded-md px-2 py-1.5 text-sm text-ink hover:bg-surface hover:text-primary transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 

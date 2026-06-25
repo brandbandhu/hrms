@@ -1,11 +1,21 @@
 import {
-  Clock, Wallet, Users, Mail, CalendarDays, BarChart3,
-  TrendingUp, TrendingDown, CheckCircle2, ArrowUpRight, Sparkles, Star,
+  Clock,
+  Wallet,
+  Users,
+  Mail,
+  CalendarDays,
+  BarChart3,
+  TrendingUp,
+  TrendingDown,
+  CheckCircle2,
+  ArrowUpRight,
+  Sparkles,
+  Star,
 } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="hero-gradient relative overflow-hidden">
+    <section id="demo" className="hero-gradient relative overflow-hidden scroll-mt-24">
       {/* decorative blobs */}
       <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-success/15 blur-3xl" />
@@ -31,13 +41,17 @@ export default function Hero() {
           </h1>
 
           <p className="mt-3 text-sm md:text-base text-ink-soft max-w-xl">
-            Manage employees, attendance, payroll, leaves and marketing campaigns from
-            one powerful cloud platform.
+            Manage employees, attendance, payroll, leaves and marketing campaigns from one powerful
+            cloud platform.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3">
-            <a href="#trial" className="btn-success">Start Free Trial</a>
-            <a href="#demo" className="btn-outline">Request Demo</a>
+            <a href="#trial" className="btn-success">
+              Start Free Trial
+            </a>
+            <a href="#demo" className="btn-outline">
+              Request Demo
+            </a>
           </div>
 
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-soft">
@@ -67,10 +81,14 @@ export default function Hero() {
                   </div>
                   <div>
                     <div className="text-[11px] text-ink-soft">Attendance Today</div>
-                    <div className="text-xl font-bold text-ink leading-none">248 <span className="text-xs font-medium text-success">/ 312</span></div>
+                    <div className="text-xl font-bold text-ink leading-none">
+                      248 <span className="text-xs font-medium text-success">/ 312</span>
+                    </div>
                   </div>
                 </div>
-                <span className="text-[11px] font-semibold text-success bg-[#dcfce7] px-2 py-0.5 rounded-full">+4.2%</span>
+                <span className="text-[11px] font-semibold text-success bg-[#dcfce7] px-2 py-0.5 rounded-full">
+                  +4.2%
+                </span>
               </div>
               <div className="mt-3 flex items-end gap-1 h-12">
                 {[40, 60, 50, 72, 58, 80, 68, 88, 75, 92, 80, 95].map((h, i) => (
@@ -84,7 +102,10 @@ export default function Hero() {
             </div>
 
             {/* Payroll */}
-            <div className="col-span-6 sm:col-span-2 soft-card p-3 float-slow" style={{ animationDelay: "0.4s" }}>
+            <div
+              className="col-span-6 sm:col-span-2 soft-card p-3 float-slow"
+              style={{ animationDelay: "0.4s" }}
+            >
               <div className="grid h-8 w-8 place-items-center rounded-lg bg-[#dcfce7] text-success">
                 <Wallet className="h-4 w-4" />
               </div>
@@ -96,7 +117,10 @@ export default function Hero() {
             </div>
 
             {/* Employees */}
-            <div className="col-span-3 sm:col-span-2 soft-card p-3 float-slow" style={{ animationDelay: "0.8s" }}>
+            <div
+              className="col-span-3 sm:col-span-2 soft-card p-3 float-slow"
+              style={{ animationDelay: "0.8s" }}
+            >
               <div className="flex items-center justify-between">
                 <Users className="h-4 w-4 text-primary" />
                 <span className="text-[10px] text-success">+8</span>
@@ -105,13 +129,20 @@ export default function Hero() {
               <div className="text-lg font-bold text-ink leading-tight">312</div>
               <div className="flex -space-x-1.5 mt-1">
                 {["#0b5cff", "#16a34a", "#f59e0b", "#ef4444"].map((c, i) => (
-                  <span key={i} className="h-5 w-5 rounded-full border-2 border-white" style={{ background: c }} />
+                  <span
+                    key={i}
+                    className="h-5 w-5 rounded-full border-2 border-white"
+                    style={{ background: c }}
+                  />
                 ))}
               </div>
             </div>
 
             {/* Email campaign */}
-            <div className="col-span-3 sm:col-span-2 soft-card p-3 float-slow" style={{ animationDelay: "1.2s" }}>
+            <div
+              className="col-span-3 sm:col-span-2 soft-card p-3 float-slow"
+              style={{ animationDelay: "1.2s" }}
+            >
               <div className="flex items-center justify-between">
                 <Mail className="h-4 w-4 text-success" />
                 <ArrowUpRight className="h-3 w-3 text-ink-soft" />
@@ -131,7 +162,9 @@ export default function Hero() {
                 <TrendingDown className="h-3 w-3 text-destructive" />
               </div>
               <div className="mt-1 text-[11px] text-ink-soft">Leave Requests</div>
-              <div className="text-lg font-bold text-ink leading-tight">14 <span className="text-[10px] font-medium text-ink-soft">· 6 pending</span></div>
+              <div className="text-lg font-bold text-ink leading-tight">
+                14 <span className="text-[10px] font-medium text-ink-soft">· 6 pending</span>
+              </div>
             </div>
 
             <div className="col-span-3 soft-card p-3 float-slow" style={{ animationDelay: "2s" }}>
@@ -146,7 +179,9 @@ export default function Hero() {
 
           {/* Floating badge */}
           <div className="hidden md:flex absolute -left-3 top-6 items-center gap-2 bg-white rounded-full pl-1.5 pr-3 py-1.5 shadow-pop border border-border float-slow">
-            <span className="grid h-6 w-6 place-items-center rounded-full bg-success text-white text-[10px] font-bold">✓</span>
+            <span className="grid h-6 w-6 place-items-center rounded-full bg-success text-white text-[10px] font-bold">
+              ✓
+            </span>
             <span className="text-xs font-semibold text-ink">Payroll run complete</span>
           </div>
         </div>
